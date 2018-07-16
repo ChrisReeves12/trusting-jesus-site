@@ -1,0 +1,100 @@
+<!doctype>
+<html>
+    <head>
+        <%include ../partials/head %>
+    </head>
+    <body>
+        <%include ../partials/header %>
+        <div class="hero-image-section">
+            <div class="social-media-icons">
+                <ul>
+                    <li><a href="<%= home_config.facebook %>"><img src="/img/facebook-circle-icon.svg"/></a></li>
+                    <li><a href="<%= home_config.twitter %>"><img src="/img/twitter-circle-icon.svg"/></a></li>
+                    <li><a href="<%= home_config.reddit %>"><img src="/img/reddit-circle-icon.svg"/></a></li>
+                </ul>
+            </div>
+            <div class="container">
+                <div class="hero-text">
+                    <h2>For in the <span class="emphasis">Gospel</span> the righteousness of <span class="emphasis">God</span>
+                        is revealed - a righteousness that is by <span class="emphasis">faith</span> from first to last, just as
+                        it is written: "The righteous will live by <span class="emphasis">faith</span>."</h2>
+                    <h4>Romans 1:17</h4>
+                </div>
+            </div>
+        </div>
+        <div class="container main-section">
+            <div class="row">
+                <div class="col-md-12 col-lg-9 main-post-section">
+                    <h2><a href="/article/<%= main_article.slug %>"><%= main_article.title %></a></h2>
+                    <div class="main-article-time-section">
+                        <i class="fa fa-clock"></i>
+                        <div class="time">Published on <%= convertDate(main_article.published_date) %> by <%= authors[main_article.author].name %></div>
+                    </div>
+                    <div class="article-text-section">
+                        <div class="horiz-section">
+                            <a href="/article/<%= main_article.slug %>">
+                                <img src="<%= main_article.image %>"/>
+                            </a>
+                            <p><%= main_article.summary %></p>
+                        </div>
+                    </div>
+                    <div class="sub-main-articles mb-md-4">
+                        <% sub_articles.forEach(function(sub_article) { %>
+                        <div class="sub-article">
+                            <a href="/article/<%= sub_article.slug %>">
+                                <img src="<%= sub_article.image %>"/>
+                            </a>
+                            <h4><a href="/article/<%= sub_article.slug %>"><%= sub_article.title %></a></h4>
+                            <h5><i class="fa fa-clock"></i> Posted on <%= convertDate(sub_article.published_date) %></h5>
+                            <p><%= sub_article.short_summary %></p>
+                        </div>
+                        <% }); %>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-3">
+                    <div class="recent-articles">
+                        <h2>Recent Articles</h2>
+                        <ul>
+                            <% other_articles.forEach(function(other_article) { %>
+                            <li>
+                                <a href="/article/<%= other_article.slug %>">
+                                    <img src="<%= other_article.image %>"/>
+                                </a>
+                                <a href="/article/<%= other_article.slug %>">
+                                    <h4><%= other_article.title %></h4>
+                                    <p class="description">
+                                        <%= other_article.short_summary %>
+                                    </p>
+                                </a>
+                            </li>
+                            <% }); %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-section">
+            <div class="container">
+                <h2>About Us</h2>
+                <p><%= home_config.about_us %></p>
+            </div>
+        </div>
+        <div class="writers-section">
+            <div class="container">
+                <h2>Our Staff</h2>
+                <% raw_authors.forEach(function(author) { %>
+                <div class="writer">
+                    <img class="writer-profile-img" src="/img/<%= author.img %>">
+                    <div class="bio">
+                        <h3><%= author.name %></h3>
+                        <h4><%= author.job %></h4>
+                        <p><%= author.bio %></p>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+        <%include ../partials/footer %>
+        <%include ../partials/footer_scripts %>
+    </body>
+</html>

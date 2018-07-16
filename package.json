@@ -1,0 +1,36 @@
+{
+  "name": "trusting-jesus-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --config config.webpack.js --mode=development --env.development",
+    "prod": "webpack --config config.webpack.js --mode=production --env.production",
+    "watch": "webpack --config config.webpack.js --mode=development --env.development --watch --progress"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "moment": "^2.22.2",
+    "mongodb": "^3.1.1",
+    "bootstrap": "^4.1.1",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "http-server": "^0.11.1",
+    "jquery": "^3.3.1",
+    "mini-css-extract-plugin": "^0.4.1",
+    "node-sass": "^4.9.0",
+    "popper": "^1.0.1",
+    "sass-loader": "^7.0.3",
+    "vue": "^2.5.16",
+    "webpack": "^4.14.0",
+    "webpack-cli": "^3.0.8",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0"
+  }
+}

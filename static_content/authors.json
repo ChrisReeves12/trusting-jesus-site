@@ -1,0 +1,17 @@
+[
+  {
+    "id_num": 1,
+    "name": "Christopher Reeves",
+    "img": "chris.jpg",
+    "job": "Lead Developer, Staff Writer",
+    "bio": "Christopher Reeves is a software developer, music producer and songwriter from Longview, Texas who currently lives in Atlanta, Georgia."
+  },
+
+  {
+    "id_num": 2,
+    "name": "Lina J. Patulilic",
+    "img": "lina.jpg",
+    "job": "Researcher, Staff Writer",
+    "bio": "Lina Patulilic is a business woman and entrepreneur from Cagayan de Oro, Philippines."
+  }
+]

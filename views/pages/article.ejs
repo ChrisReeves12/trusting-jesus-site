@@ -1,0 +1,26 @@
+<!doctype>
+<html>
+<head>
+    <%include ../partials/head %>
+</head>
+<body>
+<%include ../partials/header %>
+<div class="container main-section">
+    <%include ../partials/breadcrumb %>
+    <div class="article">
+        <div class="title-section">
+            <img class="author" src="/img/<%= authors[article.author].img %>"/>
+            <div>
+                <h1><%= article.title %></h1>
+                <h3>Written by <%= authors[article.author].name %> on <%= locals.convertDate(article.published_date) %></h3>
+            </div>
+        </div>
+        <div class="article-body">
+            <%- article.content %>
+        </div>
+    </div>
+</div>
+<%include ../partials/footer %>
+<%include ../partials/footer_scripts %>
+</body>
+</html>

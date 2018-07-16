@@ -1,0 +1,25 @@
+<!doctype>
+<html>
+<head>
+    <%include ../partials/head %>
+</head>
+<body>
+<%include ../partials/header %>
+<div class="container main-section">
+    <%include ../partials/breadcrumb %>
+    <div class="article">
+        <div class="title-section">
+            <div>
+                <h1><%= title %></h1>
+                <h3><%= sub_title %></h3>
+            </div>
+        </div>
+        <div class="article-body">
+            <%- content %>
+        </div>
+    </div>
+</div>
+<%include ../partials/footer %>
+<%include ../partials/footer_scripts %>
+</body>
+</html>

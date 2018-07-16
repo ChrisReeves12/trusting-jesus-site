@@ -1,0 +1,15 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <% if (locals.breadcrumbs) { %>
+            <% locals.breadcrumbs.forEach(function(breadcrumb) { %>
+                <li class="breadcrumb-item <%= breadcrumb.link ? '' : 'active' %>" aria-current="page">
+                    <% if (breadcrumb.link) { %>
+                        <a href="<%= breadcrumb.link %>"><%= breadcrumb.title %></a>
+                    <% } else { %>
+                        <%= breadcrumb.title %>
+                    <% } %>
+                </li>
+            <% }); %>
+        <% } %>
+    </ol>
+</nav>

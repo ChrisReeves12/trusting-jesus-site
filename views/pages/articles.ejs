@@ -1,0 +1,27 @@
+<!doctype>
+<html>
+    <head>
+        <%include ../partials/head %>
+    </head>
+    <%include ../partials/header %>
+    <div class="container main-section">
+        <%include ../partials/breadcrumb %>
+        <div class="article-listings">
+            <% articles.forEach(function(article) { %>
+            <div class="article-listing">
+                <a href="/article/<%= article.slug %>">
+                    <img src="<%= article.image %>"/>
+                </a>
+                <div class="content-section">
+                    <h3><a href="/article/<%= article.slug %>"><%= article.title %></a></h3>
+                    <h4>Written by <%= authors[article.author].name %> on <%= convertDate(article.published_date) %></h4>
+                    <p>
+                        <%- article.summary %>
+                    </p>
+                    <a href="/article/<%= article.slug %>" class="read-more"><i class="fa fa-eye"></i> Read More</a>
+                </div>
+            </div>
+            <% }); %>
+
+    </div>
+</html>
