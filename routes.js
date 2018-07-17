@@ -139,6 +139,16 @@ router.get('/article/:slug', async (req, res) => {
     }
 });
 
+router.get('/contact', (req, res) => {
+    res.render('pages/contact', {
+        head_title: 'Contact',
+        breadcrumbs: [
+            {title: 'Home', link: '/'},
+            {title: 'Contact', link: null}
+        ]
+    });
+});
+
 // Articles
 router.get('/articles', async (req, res) => {
 
